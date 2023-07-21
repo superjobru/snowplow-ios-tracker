@@ -68,7 +68,7 @@ class TestEmitterConfiguration: XCTestCase {
 
         tracker.emitter?.pause()
         for i in 0..<10 {
-            _ = tracker.track(Structured(category: "cat", action: "act").value(NSNumber(value: i)))
+            _ = tracker.track(Structured(category: "cat", action: "act").value("\(i)"))
         }
         Thread.sleep(forTimeInterval: 1)
         XCTAssertEqual(10, tracker.emitter?.dbCount)

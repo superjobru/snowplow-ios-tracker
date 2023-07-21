@@ -151,7 +151,7 @@ class TestRequest: XCTestCase, RequestCallback {
         let event = Structured(category: "DemoCategory", action: "DemoAction")
         event.label = "DemoLabel"
         event.property = "DemoProperty"
-        event.value = NSNumber(value: 5)
+        event.value = "5"
         event.entities = customContext()
         _ = tracker_.track(event)
         return 1

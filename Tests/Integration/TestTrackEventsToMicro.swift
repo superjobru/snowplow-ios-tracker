@@ -31,7 +31,7 @@ class TestTrackEventsToMicro: XCTestCase {
         let event = Structured(category: "shop", action: "add-to-basket")
         event.label = "Add To Basket"
         event.property = "pcs"
-        event.value = 2.0
+        event.value = "2.0"
         track(event)
         
         wait(for: [

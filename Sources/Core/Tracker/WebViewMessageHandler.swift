@@ -65,7 +65,7 @@ class WebViewMessageHandler: NSObject, WKScriptMessageHandler {
         let action = event["action"] as? String
         let label = event["label"] as? String
         let property = event["property"] as? String
-        let value = event["value"] as? NSNumber
+        let value = event["value"] as? String
 
         if let category = category, let action = action {
             let structured = Structured(category: category, action: action)

@@ -38,7 +38,7 @@ public class Structured: PrimitiveAbstract {
     ///
     /// This might be the price of an item added-to-basket, or the starting time of the video where play was just pressed.
     @objc
-    public var value: NSNumber?
+    public var value: String?
 
     @objc
     public init(category: String, action: String) {
@@ -57,9 +57,8 @@ public class Structured: PrimitiveAbstract {
         payload[kSPStuctAction] = action
         if let label = label { payload[kSPStuctLabel] = label }
         if let property = property { payload[kSPStuctProperty] = property }
-        if let value = value {
-            payload[kSPStuctValue] = String(format: "%.17g", value.doubleValue)
-        }
+        if let value = value { payload[kSPStuctValue] = value }
+
         return payload
     }
     
@@ -87,7 +86,7 @@ public class Structured: PrimitiveAbstract {
     ///
     /// This might be the price of an item added-to-basket, or the starting time of the video where play was just pressed.
     @objc
-    public func value(_ value: NSNumber?) -> Self {
+    public func value(_ value: String?) -> Self {
         self.value = value
         return self
     }
