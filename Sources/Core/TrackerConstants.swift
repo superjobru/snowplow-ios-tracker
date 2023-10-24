@@ -174,6 +174,7 @@ let kSPStuctAction = "se_ac"
 let kSPStuctLabel = "se_la"
 let kSPStuctProperty = "se_pr"
 let kSPStuctValue = "se_va"
+let kSPStuctScreen = "se_sc"
 
 // --- E-commerce Transaction Event
 let kSPEcommId = "tr_id"

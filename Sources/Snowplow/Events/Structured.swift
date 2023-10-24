@@ -40,6 +40,10 @@ public class Structured: PrimitiveAbstract {
     @objc
     public var value: String?
 
+    /// Name of screen from which the event was sent
+    @objc
+    public var screen: String?
+
     @objc
     public init(category: String, action: String) {
         self.category = category
@@ -58,6 +62,7 @@ public class Structured: PrimitiveAbstract {
         if let label = label { payload[kSPStuctLabel] = label }
         if let property = property { payload[kSPStuctProperty] = property }
         if let value = value { payload[kSPStuctValue] = value }
+        if let screen = screen { payload[kSPStuctScreen] = screen }
 
         return payload
     }
@@ -88,6 +93,13 @@ public class Structured: PrimitiveAbstract {
     @objc
     public func value(_ value: String?) -> Self {
         self.value = value
+        return self
+    }
+
+    /// Name of screen from which the event was sent
+    @objc
+    public func screen(_ screen: String?) -> Self {
+        self.screen = screen
         return self
     }
 }
